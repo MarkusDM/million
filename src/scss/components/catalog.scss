@@ -8,6 +8,22 @@
         margin-bottom: 6rem;
     }
 
+    &__reset {
+        border-radius: 1rem;
+        margin-left: auto;
+        border: 1.3px solid #c7c7c7;
+        width: 4rem;
+        height: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+        svg {
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+
     &__swiper {
         margin-bottom: 3.2rem;
 
@@ -200,6 +216,10 @@
 
     .catalog {
         &__wrap-filters-btns {
+            display: none;
+        }
+
+        &__reset {
             display: none;
         }
 
