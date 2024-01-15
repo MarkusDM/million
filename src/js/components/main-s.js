@@ -1,9 +1,9 @@
-import $ from "jquery";
-import Swiper from "swiper";
-import "swiper/css";
-import "swiper/css/effect-fade";
-import { Navigation, Pagination, EffectFade, Autoplay } from "swiper/modules";
-import * as d3 from "d3";
+import $ from 'jquery';
+import Swiper from 'swiper';
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper/modules';
+import * as d3 from 'd3';
 
 // init Swiper:
 
@@ -15,71 +15,71 @@ export const rem = function (rem) {
   }
 };
 
-const mainSwiperOne = new Swiper(".main__swiper-one", {
+const mainSwiperOne = new Swiper('.main__swiper-one', {
   modules: [Navigation, Pagination, EffectFade, Autoplay],
   slidesPerView: 1,
-  wrapperClass: "main__swiper-wrapper-one",
-  slideClass: "main__one-s",
+  wrapperClass: 'main__swiper-wrapper-one',
+  slideClass: 'main__one-s',
   speed: 500,
   loop: true,
   autoplay: true,
-  effect: "fade",
+  effect: 'fade',
   fadeEffect: {
     crossFade: true,
   },
 
   on: {
     slideChange: function (mainSwiperOne) {
-      $(".swiper-pagination-bullet-one").removeClass(
-        "swiper-pagination-bullet-one-active"
+      $('.swiper-pagination-bullet-one').removeClass(
+        'swiper-pagination-bullet-one-active'
       );
       $(
-        ".swiper-pagination-bullet-one:nth-child(" +
+        '.swiper-pagination-bullet-one:nth-child(' +
           ((mainSwiperOne.realIndex % 3) + 1) +
-          ")"
-      ).addClass("swiper-pagination-bullet-one-active");
+          ')'
+      ).addClass('swiper-pagination-bullet-one-active');
     },
   },
 });
 
-const mainSwiperTwo = new Swiper(".main__swiper-two", {
+const mainSwiperTwo = new Swiper('.main__swiper-two', {
   modules: [Navigation, Pagination, EffectFade, Autoplay],
   slidesPerView: 1,
-  wrapperClass: "main__swiper-wrapper-two",
-  slideClass: "main__slide-t",
+  wrapperClass: 'main__swiper-wrapper-two',
+  slideClass: 'main__slide-t',
   speed: 500,
   loop: true,
   autoplay: false,
-  effect: "fade",
+  effect: 'fade',
   fadeEffect: {
     crossFade: true,
   },
   on: {
     slideChange: function (mainSwiperTwo) {
-      $(".swiper-pagination-bullet").removeClass(
-        "swiper-pagination-bullet-active"
+      $('.swiper-pagination-bullet').removeClass(
+        'swiper-pagination-bullet-active'
       );
       $(
-        ".swiper-pagination-bullet:nth-child(" +
+        '.swiper-pagination-bullet:nth-child(' +
           ((mainSwiperTwo.realIndex % 3) + 1) +
-          ")"
-      ).addClass("swiper-pagination-bullet-active");
+          ')'
+      ).addClass('swiper-pagination-bullet-active');
     },
   },
 });
 
-const catalogSwiper = new Swiper(".catalog__swiper", {
+const catalogSwiper = new Swiper('.catalog__swiper', {
   modules: [Navigation, Pagination, EffectFade],
   spaceBetween: rem(1),
-  slidesPerView: "auto",
-  wrapperClass: "catalog__swiper-wrapper",
-  slideClass: "catalog__slide",
+  slidesPerView: 'auto',
+  wrapperClass: 'catalog__swiper-wrapper',
+  slideClass: 'catalog__slide',
   navigation: {
-    nextEl: ".catalog__swiper-arrow",
+    nextEl: '.catalog__swiper-arrow',
   },
 });
 
-const swiperPartnersTwo = new Swiper(".partners__swiper", {
+const swiperPartnersTwo = new Swiper('.partners__swiper', {
   slidesPerView: 3,
   modules: [Autoplay],
   spaceBetween: rem(6.3),
@@ -100,17 +100,17 @@ const swiperPartnersTwo = new Swiper(".partners__swiper", {
   },
 });
 
-if (document.getElementById("map")) {
+if (document.getElementById('map')) {
   ymaps.ready(function () {
     var myMap = new ymaps.Map(
-        "map",
+        'map',
         {
           center: [55.884721, 37.60372],
 
           zoom: 16,
         },
         {
-          searchControlProvider: "yandex#search",
+          searchControlProvider: 'yandex#search',
         }
       ),
       // Создаём макет содержимого.
@@ -123,9 +123,9 @@ if (document.getElementById("map")) {
         {
           // // Опции.
           // // Необходимо указать данный тип макета.
-          iconLayout: "default#image",
+          iconLayout: 'default#image',
           // // Своё изображение иконки метки.
-          iconImageHref: "assets/images/geo-map.svg",
+          iconImageHref: 'assets/images/geo-map.svg',
           // Размеры метки.
           iconImageSize: [55, 88],
           // Смещение левого верхнего угла иконки относительно
@@ -136,16 +136,16 @@ if (document.getElementById("map")) {
       myPlacemarkWithContent = new ymaps.Placemark(
         [55.785979, 37.660521],
         {
-          hintContent: "Собственный значок метки с контентом",
-          balloonContent: "А эта — новогодняя",
-          iconContent: "12",
+          hintContent: 'Собственный значок метки с контентом',
+          balloonContent: 'А эта — новогодняя',
+          iconContent: '12',
         },
         {
           // Опции.
           // Необходимо указать данный тип макета.
-          iconLayout: "default#imageWithContent",
+          iconLayout: 'default#imageWithContent',
           // Своё изображение иконки метки.
-          iconImageHref: "assets/images/geo-map.svg",
+          iconImageHref: 'assets/images/geo-map.svg',
           // Размеры метки.
           iconImageSize: [48, 48],
           // Смещение левого верхнего угла иконки относительно
@@ -162,224 +162,225 @@ if (document.getElementById("map")) {
   });
 }
 
-$(".g-box").on("click", function () {
+$('.g-box').on('click', function () {
   // const info = $(`.p-map__box[data-card='${$(this).attr('id')}']`);
-  $(".g-box").not(this).removeClass("active").show(200);
-  $(this).toggleClass("active").fadeIn(200);
-  $(".p-map__box").not(this).removeClass("active").show(200);
+  $('.g-box').not(this).removeClass('active').show(200);
+  $(this).toggleClass('active').fadeIn(200);
+  $('.p-map__box').not(this).removeClass('active').show(200);
   // info.toggleClass('active').fadeIn(200);
 });
 
 $(document).mouseup(function (e) {
-  var container = $(".p-map__box");
-  var gBoxRemove = $(".g-box");
+  var container = $('.p-map__box');
+  var gBoxRemove = $('.g-box');
   if (gBoxRemove && container.has(e.target).length === 0) {
-    container.removeClass("active");
-    gBoxRemove.removeClass("active");
+    container.removeClass('active');
+    gBoxRemove.removeClass('active');
   }
 });
 
-$(".g-box").hover(function () {
+$('.g-box').hover(function () {
   const info = $(
-    `.world-container-map-info-item[data-card='${$(this).attr("id")}']`
+    `.world-container-map-info-item[data-card='${$(this).attr('id')}']`
   );
-  $(".g-box").not(this).removeClass("hover-g").show(200);
-  $(this).toggleClass("hover-g").fadeIn(200);
-  info.not(this).removeClass("hover-g").show(200);
-  info.toggleClass("hover-g").fadeIn(200);
+  $('.g-box').not(this).removeClass('hover-g').show(200);
+  $(this).toggleClass('hover-g').fadeIn(200);
+  info.not(this).removeClass('hover-g').show(200);
+  info.toggleClass('hover-g').fadeIn(200);
 });
 
-$(".world-container-filter--item").on("click", function () {
+$('.world-container-filter--item').on('click', function () {
   $(this)
-    .parents(".world-container-filter")
-    .find(".world-container-filter--item")
-    .removeClass("active");
-  $(this).addClass("active");
+    .parents('.world-container-filter')
+    .find('.world-container-filter--item')
+    .removeClass('active');
+  $(this).addClass('active');
 });
 
 $(document).ready(() => {
   let panzoomInstances = [];
   const width = screen.width;
 
-  $(".p-map__floor").click(function () {
-    var id = $(this).attr("data-tab"),
+  $('.p-map__floor').click(function () {
+    var id = $(this).attr('data-tab'),
       content = $('.p-map__content[data-tab="' + id + '"]');
 
-    panzoomInstances.forEach((panzoom) => {
+    panzoomInstances.forEach(panzoom => {
       panzoom.pan(0, 0);
       panzoom.zoom(width < 769 ? 1.5 : 1, { animate: false });
     });
 
-    $(".p-map__floor.active").removeClass("active"); // 1
-    $(this).addClass("active"); // 2
+    $('.p-map__floor.active').removeClass('active'); // 1
+    $(this).addClass('active'); // 2
 
-    $(".p-map__content.active").removeClass("active"); // 3
-    content.addClass("active"); // 4
+    $('.p-map__content.active').removeClass('active'); // 3
+    content.addClass('active'); // 4
   });
 
-  $(".p-map__boxs").on("click", ".p-map__box-desk-close", function (event) {
-    console.log("close");
-    $(".p-map__box").removeClass("active");
-    $(".g-box").removeClass("active");
+  $('.p-map__boxs').on('click', '.p-map__box-desk-close', function (event) {
+    console.log('close');
+    $('.p-map__box').removeClass('active');
+    $('.g-box').removeClass('active');
   });
 
-  $(".p-map__content-block").on(
-    "click",
-    ".p-map__box-mob-close",
+  $('.p-map__content-block').on(
+    'click',
+    '.p-map__box-mob-close',
     function (event) {
-      console.log("close");
-      $(".p-map__box").removeClass("active");
-      $(".g-box").removeClass("active");
+      console.log('close');
+      $('.p-map__box').removeClass('active');
+      $('.g-box').removeClass('active');
     }
   );
 
-  const svgContainers = document.querySelectorAll(".content-svg");
+  const svgContainers = document.querySelectorAll('.content-svg');
   if (svgContainers.length > 0) {
-    const btnZoomIn = document.querySelector(".p-map__zoom-plus");
-    const btnZoomOut = document.querySelector(".p-map__zoom-minus");
+    const btnZoomIn = document.querySelector('.p-map__zoom-plus');
+    const btnZoomOut = document.querySelector('.p-map__zoom-minus');
     svgContainers.forEach((svgContainer, index) => {
       const panzoom = Panzoom(svgContainer, {
-        contain: "outside",
+        contain: 'outside',
         startScale: width < 769 ? 1.5 : 1,
         maxScale: width < 769 ? 2.5 : 2,
         minScale: width < 769 ? 1.5 : 1,
         startX: 0,
         startY: 0,
       });
-      svgContainer.classList.add("no-pan");
+      svgContainer.classList.add('no-pan');
       setTimeout(() => {
         panzoom.pan(0, 0, { animate: false });
-        svgContainer.classList.remove("no-pan");
+        svgContainer.classList.remove('no-pan');
       }, 100);
       if (width < 769) {
         panzoom.zoom(1.5, { animate: false });
       } else {
-        panzoom.zoom(1, { animate: true });
+        setTimeout(() => {
+          panzoom.zoom(1.5, { animate: true });
+        }, 500);
       }
-
-      svgContainer.addEventListener("panzoomstart", (event) => {
-        svgContainer.classList.add("no-touch");
+      svgContainer.addEventListener('panzoomstart', event => {
+        svgContainer.classList.add('no-touch');
       });
 
-      svgContainer.addEventListener("panzoomend", (event) => {
-        svgContainer.classList.remove("no-touch"); // => { x: 0, y: 0, scale: 1 }
+      svgContainer.addEventListener('panzoomend', event => {
+        svgContainer.classList.remove('no-touch'); // => { x: 0, y: 0, scale: 1 }
       });
 
       panzoomInstances.push(panzoom);
     });
 
     // Обработка событий кнопок зума
-    btnZoomIn.addEventListener("click", () => {
-      panzoomInstances.forEach((panzoom) => panzoom.zoomIn());
+    btnZoomIn.addEventListener('click', () => {
+      panzoomInstances.forEach(panzoom => panzoom.zoomIn());
     });
 
-    btnZoomOut.addEventListener("click", () => {
-      panzoomInstances.forEach((panzoom) => panzoom.zoomOut());
+    btnZoomOut.addEventListener('click', () => {
+      panzoomInstances.forEach(panzoom => panzoom.zoomOut());
     });
   }
 });
 
-$(".p-map__item--bank").on("click", function () {
-  $(".p-map__item").each((id, item) => {
+$('.p-map__item--bank').on('click', function () {
+  $('.p-map__item').each((id, item) => {
     console.log(this);
     if (this !== item) {
-      $(item).removeClass("active");
+      $(item).removeClass('active');
     } else {
-      $(".g-toilet").removeClass("active");
-      $(".g-staircase").removeClass("active");
-      $(".g-box-exit").removeClass("active");
-      $(".g-wardrobe").removeClass("active");
-      $(".g-bank").toggleClass("active");
-      $(this).toggleClass("active");
+      $('.g-toilet').removeClass('active');
+      $('.g-staircase').removeClass('active');
+      $('.g-box-exit').removeClass('active');
+      $('.g-wardrobe').removeClass('active');
+      $('.g-bank').toggleClass('active');
+      $(this).toggleClass('active');
     }
   });
 });
 
-$(".p-map__item--toilet").on("click", function () {
-  $(".p-map__item").each((id, item) => {
+$('.p-map__item--toilet').on('click', function () {
+  $('.p-map__item').each((id, item) => {
     console.log(this, item);
     if (this !== item) {
-      $(item).removeClass("active");
+      $(item).removeClass('active');
     } else {
-      $(".g-toilet").toggleClass("active");
-      $(".g-staircase").removeClass("active");
-      $(".g-box-exit").removeClass("active");
-      $(".g-wardrobe").removeClass("active");
-      $(".g-bank").removeClass("active");
-      $(this).toggleClass("active");
+      $('.g-toilet').toggleClass('active');
+      $('.g-staircase').removeClass('active');
+      $('.g-box-exit').removeClass('active');
+      $('.g-wardrobe').removeClass('active');
+      $('.g-bank').removeClass('active');
+      $(this).toggleClass('active');
     }
   });
 });
 
-$(".p-map__item--staircase").on("click", function () {
-  $(".p-map__item").each((id, item) => {
+$('.p-map__item--staircase').on('click', function () {
+  $('.p-map__item').each((id, item) => {
     console.log(this, item);
     if (this !== item) {
-      $(item).removeClass("active");
+      $(item).removeClass('active');
     } else {
-      $(".g-staircase").toggleClass("active");
-      $(".g-toilet").removeClass("active");
-      $(".g-box-exit").removeClass("active");
-      $(".g-wardrobe").removeClass("active");
-      $(".g-bank").removeClass("active");
-      $(this).toggleClass("active");
+      $('.g-staircase').toggleClass('active');
+      $('.g-toilet').removeClass('active');
+      $('.g-box-exit').removeClass('active');
+      $('.g-wardrobe').removeClass('active');
+      $('.g-bank').removeClass('active');
+      $(this).toggleClass('active');
     }
   });
 });
-$(".p-map__item--exit").on("click", function () {
-  $(".p-map__item").each((id, item) => {
+$('.p-map__item--exit').on('click', function () {
+  $('.p-map__item').each((id, item) => {
     console.log(this, item);
     if (this !== item) {
-      $(item).removeClass("active");
+      $(item).removeClass('active');
     } else {
-      $(".g-box-exit").toggleClass("active");
-      $(".g-staircase").removeClass("active");
-      $(".g-toilet").removeClass("active");
-      $(".g-wardrobe").removeClass("active");
-      $(".g-bank").removeClass("active");
-      $(this).toggleClass("active");
+      $('.g-box-exit').toggleClass('active');
+      $('.g-staircase').removeClass('active');
+      $('.g-toilet').removeClass('active');
+      $('.g-wardrobe').removeClass('active');
+      $('.g-bank').removeClass('active');
+      $(this).toggleClass('active');
     }
   });
 });
-$(".p-map__item--wardrobe").on("click", function () {
-  $(".p-map__item").each((id, item) => {
+$('.p-map__item--wardrobe').on('click', function () {
+  $('.p-map__item').each((id, item) => {
     console.log(this, item);
     if (this !== item) {
-      $(item).removeClass("active");
+      $(item).removeClass('active');
     } else {
-      $(".g-wardrobe").toggleClass("active");
-      $(".g-box-exit").removeClass("active");
-      $(".g-staircase").removeClass("active");
-      $(".g-toilet").removeClass("active");
-      $(".g-bank").removeClass("active");
-      $(this).toggleClass("active");
+      $('.g-wardrobe').toggleClass('active');
+      $('.g-box-exit').removeClass('active');
+      $('.g-staircase').removeClass('active');
+      $('.g-toilet').removeClass('active');
+      $('.g-bank').removeClass('active');
+      $(this).toggleClass('active');
     }
   });
 });
 
-const phoneMask = document.getElementById("phone-mask");
+const phoneMask = document.getElementById('phone-mask');
 
 !(function () {
-  const form = document.getElementById("form");
-  const userName = document.getElementById("username");
-  const email = document.getElementById("email");
+  const form = document.getElementById('form');
+  const userName = document.getElementById('username');
+  const email = document.getElementById('email');
   // const phone = document.getElementById("phone");
-  const companyName = document.getElementById("company-name");
-  const formActivity = document.getElementById("form-activity");
-  const square = document.getElementById("square");
+  const companyName = document.getElementById('company-name');
+  const formActivity = document.getElementById('form-activity');
+  const square = document.getElementById('square');
 
   // Показываем ошибку под полем
   function showError(input, message) {
     const formControl = input.parentElement;
-    formControl.className = "form-control error";
-    const small = formControl.querySelector("small");
+    formControl.className = 'form-control error';
+    const small = formControl.querySelector('small');
     small.innerText = message;
   }
 
   // Показываем, что поле заполнено верно
   function showSuccess(input, textarea) {
     const formControl = input.parentElement;
-    formControl.className = "form-control success";
+    formControl.className = 'form-control success';
   }
 
   // Проверяем адрес электронной почты на правильность
@@ -389,7 +390,7 @@ const phoneMask = document.getElementById("phone-mask");
     if (re.test(input.value.trim())) {
       showSuccess(input);
     } else {
-      showError(input, "Адрес электронной почты имеет неверный формат");
+      showError(input, 'Адрес электронной почты имеет неверный формат');
     }
   }
 
@@ -402,7 +403,7 @@ const phoneMask = document.getElementById("phone-mask");
   function checkRequired(inputElements) {
     let isRequired = false;
     inputElements.forEach(function (input) {
-      if (input.value.trim() === "") {
+      if (input.value.trim() === '') {
         showError(
           input,
           `Требуется задать значение для поля ${getFieldName(input)}`
@@ -441,7 +442,7 @@ const phoneMask = document.getElementById("phone-mask");
 
   // Устанавливаем слушатели событий на форму
   if (form) {
-    form.addEventListener("submit", function (e) {
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
 
       if (checkRequired([userName, email, companyName, square, phoneMask])) {
@@ -463,15 +464,15 @@ function initBoxDown() {
     if (!initBox) {
       initBox = true;
 
-      $(".p-map__searh-down-lists").hide(0);
-      $(".p-map__searh-inner").on(
-        "click",
-        ".p-map__searh-down-block",
+      $('.p-map__searh-down-lists').hide(0);
+      $('.p-map__searh-inner').on(
+        'click',
+        '.p-map__searh-down-block',
         function () {
-          let more = $(this).find(".p-map__searh-down-block-box");
-          let hide = $(this).find(".p-map__searh-down-lists");
+          let more = $(this).find('.p-map__searh-down-block-box');
+          let hide = $(this).find('.p-map__searh-down-lists');
           hide.slideToggle(300);
-          more.toggleClass("active");
+          more.toggleClass('active');
         }
       );
     }
@@ -480,5 +481,5 @@ function initBoxDown() {
   }
 }
 initBoxDown();
-window.addEventListener("load", initBoxDown);
-window.addEventListener("resize", initBoxDown);
+window.addEventListener('load', initBoxDown);
+window.addEventListener('resize', initBoxDown);

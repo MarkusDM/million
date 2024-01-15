@@ -1,5 +1,5 @@
 .latest-news {
-  margin-bottom: 18rem;
+  margin-bottom: 9.7rem;
 }
 
 .latest-news__title {
@@ -18,6 +18,9 @@
 }
 
 @media (max-width: 48em) {
+  .latest-news {
+    margin-bottom: 6.3rem;
+  }
   .latest-news__title {
     margin-bottom: 4rem;
     font-size: 5.6rem;

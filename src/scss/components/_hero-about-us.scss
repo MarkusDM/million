@@ -9,7 +9,6 @@
   // .hero-about-us__bg-wrap
 
   &__bg-wrap {
-    margin-bottom: 18rem;
     display: flex;
     width: 100%;
     height: 86rem;
@@ -41,6 +40,26 @@
       border-radius: 3rem;
     }
     &__privileges {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+}
+@media (min-width: 48em) {
+  .hero-about-us {
+    &__container {
+      display: grid;
+      grid-template-columns: 1fr 71rem;
+      gap: 2rem;
+    }
+    &__bg-wrap {
+      height: auto;
+    }
+    &__bg {
+      object-fit: contain;
+    }
+    &__privileges {
+      align-content: start;
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
     }
