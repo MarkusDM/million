@@ -2,6 +2,22 @@
   margin-bottom: 18rem;
 }
 
+.all-news__reset {
+  border-radius: 1rem;
+  margin-left: auto;
+  border: 1.3px solid #c7c7c7;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  svg {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
 .all-news__filter {
   margin-bottom: 9.7rem;
 }
@@ -97,6 +113,10 @@
         height: 10rem;
       }
     }
+  }
+
+  .all-news__reset {
+    display: none;
   }
 }
 @media (min-width: 48em) {
