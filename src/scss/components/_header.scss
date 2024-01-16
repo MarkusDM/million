@@ -276,7 +276,8 @@
       width: max-content;
       display: flex;
       flex-direction: column;
-
+      max-height: 40rem;
+      overflow-y: scroll;
       &-lists {
         margin-bottom: 6.4rem;
         strong {
@@ -307,6 +308,24 @@
         }
       }
     }
+
+    &-item-down::-webkit-scrollbar {
+      width: 1rem;
+      
+    }
+    
+     &-item-down::-webkit-scrollbar-track {
+      background: none;
+      
+    }
+    
+     &-item-down::-webkit-scrollbar-thumb {
+      background-color: #1c1c1c; 
+      border-radius: 0 2rem  2rem 0;
+     
+    
+   
+  }
 
     &-item.active {
       .header__menu-item-link {
