@@ -1,5 +1,5 @@
 .contacts {
-  margin-bottom: 18rem;
+  margin-bottom: 10rem;
   &__top {
     margin-bottom: 8rem;
     .about-us-page & {
@@ -23,7 +23,7 @@
     &-info-title {
       font-size: 7.4rem;
       font-style: normal;
-      font-weight: 600;
+      font-weight: 400;
       line-height: 127.027%;
       text-transform: uppercase;
       padding-right: 16.4rem;
@@ -32,7 +32,7 @@
     &-info-category {
       padding: 1.4rem 2.4rem;
       justify-content: center;
-      display: flex;
+    
       align-items: center;
       position: absolute;
       border-radius: 2rem;
@@ -41,6 +41,7 @@
       font-size: 1.8rem;
       line-height: 138.889%;
       right: 0;
+      display: none;
     }
 
     &-info-category.yellow {
@@ -104,6 +105,7 @@
       line-height: 127.027%;
       text-transform: uppercase;
       margin-bottom: 6rem;
+      font-weight: 400;
     }
 
     &-left-lists {
