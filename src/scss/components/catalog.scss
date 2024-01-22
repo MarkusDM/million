@@ -86,6 +86,14 @@
             }
 
         }
+
+        &-content.active {
+            transition: 0.2s;
+            background: #ED1E79;
+           span {
+            color: #fff;
+           }
+        }
     }
 
     &__tegs {
