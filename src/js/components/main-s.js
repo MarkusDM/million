@@ -14,6 +14,8 @@ export const rem = function (rem) {
     return (100 / 390) * (0.1 * $(window).width()) * rem;
   }
 };
+
+
 function ajax(){
   $.ajax({
     url: '/ajax/main/main.php',
@@ -58,7 +60,7 @@ $.when(ajax()).done(function(){
         ).addClass('swiper-pagination-bullet-one-active');
       },
     },
-  });
+  })
 
   const mainSwiperTwo = new Swiper('.main__swiper-two', {
     modules: [Navigation, Pagination, EffectFade, Autoplay],
