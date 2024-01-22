@@ -14,9 +14,6 @@ export const rem = function (rem) {
     return (100 / 390) * (0.1 * $(window).width()) * rem;
   }
 };
-
-let speedOne;
-let speedTwo;
 function ajax(){
   $.ajax({
     url: '/ajax/main/main.php',
@@ -24,26 +21,26 @@ function ajax(){
     data: "",
     dataType: 'json',
     success: $.proxy(function (data) {
-      console.log(data);
-      speedOne = data.SPEED_ONE;
-      speedTwo = data.SPEED_TWO;
+      window.speedOne = data.SPEED_ONE;
+      window.speedTwo = data.SPEED_TWO;
     }, this),
     error: $.proxy(function (error) {
       console.log(error);
     }, this),
   });
 }
+
 $.when(ajax()).done(function(){
-  console.log(speedOne);
-  console.log(speedTwo);
   const mainSwiperOne = new Swiper('.main__swiper-one', {
     modules: [Navigation, Pagination, EffectFade, Autoplay],
     slidesPerView: 1,
     wrapperClass: 'main__swiper-wrapper-one',
     slideClass: 'main__one-s',
-    speed: speedOne,
+    speed: 500,
     loop: true,
-    autoplay: true,
+    autoplay: {
+      delay: window.speedOne
+    },
     effect: 'fade',
     fadeEffect: {
       crossFade: true,
@@ -68,9 +65,11 @@ $.when(ajax()).done(function(){
     slidesPerView: 1,
     wrapperClass: 'main__swiper-wrapper-two',
     slideClass: 'main__slide-t',
-    speed: speedTwo,
+    speed: 500,
     loop: true,
-    autoplay: true,
+    autoplay: {
+      delay: window.SpeedTwo
+    },
     effect: 'fade',
     fadeEffect: {
       crossFade: true,
