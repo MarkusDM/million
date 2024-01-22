@@ -17,6 +17,8 @@
     margin-bottom: 1.5rem;
     position: relative;
     z-index: 11;
+    border-bottom: 1px solid #c7c7c7;
+    padding-bottom: 1.5rem;
     &-inner {
       display: flex;
     }
@@ -32,7 +34,7 @@
         content: '';
         width: 2.4rem;
         height: 2.4rem;
-        background-image: url(./assets/images/icon/geo-pin.svg);
+        background-image: url(./assets/images/icon/buekblack.svg);
         background-size: 100% 100%;
         background-repeat: no-repeat;
         top: 50%;

@@ -22,7 +22,7 @@ const mainSwiperOne = new Swiper('.main__swiper-one', {
   slideClass: 'main__one-s',
   speed: 500,
   loop: true,
-  autoplay: true,
+  // autoplay: true,
   effect: 'fade',
   fadeEffect: {
     crossFade: true,

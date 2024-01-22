@@ -1,19 +1,20 @@
 .info {
-    border-bottom: 1px solid #C7C7C7;
+    border-bottom: 1px solid #c7c7c7;
     .container {
         width: 100%;
+        overflow: hidden;
     }
     &__wrapper {
         display: flex;
-        border-bottom: 1px solid #C7C7C7;
+        border-bottom: 1px solid #c7c7c7;
     }
 
     &__left {
         padding-bottom: 10.1rem;
         padding-right: 2rem;
         padding-left: 10rem;
-        padding-top: 10.6rem;
-        border-right: 1px solid #C7C7C7;
+        padding-top: 2.8rem;
+        border-right: 1px solid #c7c7c7;
         display: flex;
         flex-direction: column;
         width: 50%;
@@ -22,16 +23,15 @@
     &__text {
         display: flex;
         align-items: center;
-       
+
         width: 84rem;
-       
 
         &-bold {
             display: block;
             font-size: 7.4rem;
             font-style: normal;
             font-weight: 400;
-            line-height: 127.027%; 
+            line-height: 127.027%;
             text-transform: uppercase;
             margin-right: 2rem;
         }
@@ -44,7 +44,9 @@
         &-inner {
             display: flex;
             flex-direction: column;
-
+            &-strong {
+                margin-left: auto;
+            }
             strong {
                 display: block;
                 font-size: 1.6rem;
@@ -60,9 +62,10 @@
                 font-weight: 600;
                 line-height: normal;
                 text-transform: uppercase;
-                
             }
         }
+
+       
     }
 
     &__right {
@@ -75,12 +78,13 @@
         width: fit-content;
         display: flex;
         flex-direction: column;
-        padding-top: 6.9rem;
+        padding-top: 3.8rem;
         padding-bottom: 6.9rem;
         padding-left: 8.6rem;
-        padding-right: 9.7rem;
-        border-right: 1px solid #C7C7C7;
-        border-bottom: 1px solid #C7C7C7;
+        padding-right: 6.7rem;
+        border-right: 1px solid #c7c7c7;
+        border-bottom: 1px solid #c7c7c7;
+        width: 45%;
         span {
             font-size: 2.5rem;
             font-style: normal;
@@ -90,12 +94,11 @@
         }
 
         span:nth-child(1) {
-            padding-left: 2rem;
+            padding-left: 4rem;
         }
         span:nth-child(3) {
             padding-left: 7rem;
         }
-        
     }
 
     &__block {
@@ -103,18 +106,21 @@
         padding-top: 3.8rem;
         padding-left: 2rem;
         padding-bottom: 3.7rem;
-        border-bottom: 1px solid #C7C7C7;
-        padding-right: 9.8rem;
+        border-bottom: 1px solid #c7c7c7;
+        padding-right: 9rem;
+        position: relative;
+        width: 55%;
         &-street {
             display: flex;
             flex-direction: column;
+
             strong {
                 display: block;
-                font-size: 2.3rem;
+                font-size: 2.8rem;
                 font-style: normal;
                 font-weight: 600;
-                width: 24.2rem;
-                margin-bottom: 3.2rem;
+                width: 26.2rem;
+                margin-bottom: 3rem;
             }
 
             span {
@@ -125,11 +131,14 @@
         }
 
         &-icons {
-            display: flex;
-            flex-wrap: wrap;
-            width: 14.5rem;
-            height: 14.5rem;
-           
+            // display: flex;
+            // flex-wrap: wrap;
+            // width: 14.5rem;
+            // height: 14.5rem;
+
+            position: absolute;
+            right: 9.8rem;
+            top: 4.6rem;
         }
 
         &-icon {
@@ -141,15 +150,20 @@
             width: 7rem;
             height: 7rem;
             border-radius: 1rem;
-            border: 1.3px solid #1C1C1C;
+            border: 1.3px solid #1c1c1c;
             display: flex;
             justify-content: center;
-            align-items:center;
+            align-items: center;
             transition: 0.2s;
             &:hover {
-                background: var(--Black, linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), #1C1C1C);
+                background: var(
+                    --Black,
+                    linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%),
+                    linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%),
+                    linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%),
+                    #1c1c1c
+                );
                 svg {
-                    
                     path {
                         stroke: #fff;
                     }
@@ -159,9 +173,6 @@
                 width: 2rem;
                 height: 1.6rem;
             }
-
-
-
         }
 
         &-icon:first-child {
@@ -177,12 +188,13 @@
     &__map {
         display: flex;
         justify-content: center;
-        align-items:center;
-        padding-top: 3rem;
+        align-items: center;
+        padding-top: 0rem;
         padding-left: 5.1rem;
         padding-right: 3.8rem;
-        padding-bottom: 6rem;
-        border-right: 1px solid #C7C7C7;
+        padding-bottom: 1rem;
+        border-right: 1px solid #c7c7c7;
+        width: 45%;
         &-image {
             width: 34.2rem;
             height: 20.7rem;
@@ -195,17 +207,17 @@
     }
 
     &__plan {
-        padding-left: 2rem;
-        padding-top: 7.4rem;
+        padding-left: 2.2rem;
+        padding-top: 4.4rem;
 
         &-link {
             font-size: 2.5rem;
-            color:  #808080;
-            padding-right: 20rem;
+            color: #808080;
+            padding-right: 26rem;
             position: relative;
             &::before {
                 position: absolute;
-                content:'';
+                content: "";
                 width: 13.4rem;
                 height: 13.1rem;
                 background-image: url(./assets/images/info/box-tringle.svg);
@@ -223,9 +235,7 @@
     }
 }
 
-
 @media (max-width: 48em) {
-
     .info {
         border-bottom: none;
         margin-bottom: 18rem;
@@ -261,8 +271,6 @@
                     line-height: 135.714%;
                     display: block;
                 }
-
-                
             }
 
             &-link {
@@ -273,7 +281,7 @@
                 position: relative;
                 &::before {
                     position: absolute;
-                    content:'';
+                    content: "";
                     width: 20.8rem;
                     height: 8rem;
                     bottom: 0;
