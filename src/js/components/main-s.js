@@ -6,6 +6,26 @@ import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper/modules';
 import * as d3 from 'd3';
 
 // init Swiper:
+let speedOne;
+  let speedTwo;
+  $.ajax({
+    url: '/ajax/main/main.php',
+    type: 'post',
+    data: "",
+    dataType: 'json',
+    success: $.proxy(function (data) {
+      console.log(data);
+      speedOne = data.SPEED_ONE;
+      speedTwo = data.SPEED_TWO;
+    }, this),
+    error: $.proxy(function (error) {
+      console.log(error);
+    }, this),
+  });
+  console.log(speedOne);
+  console.log(speedTwo);
+
+
 
 export const rem = function (rem) {
   if ($(window).width() > 768) {
@@ -20,7 +40,7 @@ const mainSwiperOne = new Swiper('.main__swiper-one', {
   slidesPerView: 1,
   wrapperClass: 'main__swiper-wrapper-one',
   slideClass: 'main__one-s',
-  speed: 500,
+  speed: speedOne,
   loop: true,
   // autoplay: true,
   effect: 'fade',
@@ -47,7 +67,7 @@ const mainSwiperTwo = new Swiper('.main__swiper-two', {
   slidesPerView: 1,
   wrapperClass: 'main__swiper-wrapper-two',
   slideClass: 'main__slide-t',
-  speed: 500,
+  speed: speedTwo,
   loop: true,
   autoplay: false,
   effect: 'fade',
