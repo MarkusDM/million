@@ -207,6 +207,7 @@
     }
 
     &__tag {
+        margin-top: auto;
         display: flex;
         justify-content: center;
         align-items:center;
@@ -227,7 +228,7 @@
 
 
     &__float {
-        
+        margin-top: auto;
         font-size: 1.8rem;
         font-style: normal;
         font-weight: 600;
@@ -250,7 +251,7 @@
     }
 
     &__geo {
-        
+        margin-top: auto;
         font-size: 1.8rem;
         font-style: normal;
         font-weight: 600;
@@ -276,7 +277,7 @@
         display: flex;
         justify-content: space-between;
         margin-top: auto;
-        align-items:center;
+        
     }
 
     &__status {
