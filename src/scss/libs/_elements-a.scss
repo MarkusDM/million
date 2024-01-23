@@ -153,6 +153,7 @@
   height: 100%;
   background-color: #e6e6e6;
   transition: top 0.4s ease;
+  display: none;
   ._filters-box-opened & {
     top: 0;
   }

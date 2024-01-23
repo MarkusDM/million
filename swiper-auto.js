@@ -1,3 +1,12 @@
+import $ from 'jquery';
+import Swiper from 'swiper';
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper/modules';
+import * as d3 from 'd3';
+
+
+
 function ajax(){
     $.ajax({
       url: '/ajax/main/main.php',
