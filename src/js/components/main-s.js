@@ -75,12 +75,17 @@ $.when(ajax()).done(function(){
     slideClass: 'main__slide-t',
     speed: 500,
     loop: true,
-    autoplay: {
-      delay: window.speedTwo
-    },
+    // autoplay: {
+    //   delay: window.speedTwo
+    // },
     effect: 'fade',
     fadeEffect: {
       crossFade: true,
+    },
+    pagination: {
+      el: ".main__swiper-two-pagination-bullets",
+      dynamicBullets: true,
+      clickable: true,
     },
     // on: {
     //   slideChange: function (mainSwiperTwo) {

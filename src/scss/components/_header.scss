@@ -751,6 +751,7 @@
         font-size: 3.2rem;
         border-bottom: 1px solid #c7c7c7;
         border-top: 1px solid #c7c7c7;
+        z-index: 2;
         a {
           width: 100%;
           display: block;
@@ -766,6 +767,7 @@
           right: 0;
           top: 50%;
           transform: translate(0, -50%);
+          z-index: -1;
         }
       }
 
