@@ -527,9 +527,9 @@ window.addEventListener('resize', initBoxDown);
 $('#username').on('input', function(){
 	this.value = this.value.replace(/[^а-яё\s\-]/gi, '');
 });
-$('#company-name').on('input', function(){
-	this.value = this.value.replace(/[^а-яё\s\-.]/gi, '');
-});
+// $('#company-name').on('input', function(){
+// 	this.value = this.value.replace(/[^а-яё\s\-.]/gi, '');
+// });
 
 window.addEventListener("DOMContentLoaded", function() {
   [].forEach.call( document.querySelectorAll('#phone-mask'), function(input) {
