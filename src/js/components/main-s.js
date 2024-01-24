@@ -52,7 +52,6 @@ $.when(ajax()).done(function(){
     pagination: {
       el: ".main__swiper-one-pagination-bullets",
       dynamicBullets: true,
-      dynamicMainBullets: 3,
       clickable: true,
     },
     // on: {
