@@ -77,24 +77,24 @@ $.when(ajax()).done(function(){
     speed: 500,
     loop: true,
     autoplay: {
-      delay: window.SpeedTwo
+      delay: window.speedTwo
     },
     effect: 'fade',
     fadeEffect: {
       crossFade: true,
     },
-    on: {
-      slideChange: function (mainSwiperTwo) {
-        $('.swiper-pagination-bullet').removeClass(
-          'swiper-pagination-bullet-active'
-        );
-        $(
-          '.swiper-pagination-bullet:nth-child(' +
-            ((mainSwiperTwo.realIndex % 3) + 1) +
-            ')'
-        ).addClass('swiper-pagination-bullet-active');
-      },
-    },
+    // on: {
+    //   slideChange: function (mainSwiperTwo) {
+    //     $('.swiper-pagination-bullet').removeClass(
+    //       'swiper-pagination-bullet-active'
+    //     );
+    //     $(
+    //       '.swiper-pagination-bullet:nth-child(' +
+    //         ((mainSwiperTwo.realIndex % 3) + 1) +
+    //         ')'
+    //     ).addClass('swiper-pagination-bullet-active');
+    //   },
+    // },
   });
 })
 
