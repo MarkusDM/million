@@ -4,6 +4,7 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper/modules';
 import * as d3 from 'd3';
+import Inputmask from "inputmask";
 
 // init Swiper:
 
@@ -46,19 +47,24 @@ $.when(ajax()).done(function(){
     fadeEffect: {
       crossFade: true,
     },
-
-    on: {
-      slideChange: function (mainSwiperOne) {
-        $('.swiper-pagination-bullet-one').removeClass(
-          'swiper-pagination-bullet-one-active'
-        );
-        $(
-          '.swiper-pagination-bullet-one:nth-child(' +
-            ((mainSwiperOne.realIndex % 3) + 1) +
-            ')'
-        ).addClass('swiper-pagination-bullet-one-active');
-      },
+    pagination: {
+      el: ".main__swiper-one-pagination-bullets",
+      dynamicBullets: true,
+      dynamicMainBullets: 3,
+      clickable: true,
     },
+    // on: {
+    //   slideChange: function (mainSwiperOne) {
+    //     $('.swiper-pagination-bullet-one').removeClass(
+    //       'swiper-pagination-bullet-one-active'
+    //     );
+    //     $(
+    //       '.swiper-pagination-bullet-one:nth-child(' +
+    //         ((mainSwiperOne.realIndex % 3) + 1) +
+    //         ')'
+    //     ).addClass('swiper-pagination-bullet-one-active');
+    //   },
+    // },
   })
 
   const mainSwiperTwo = new Swiper('.main__swiper-two', {
@@ -381,7 +387,13 @@ $('.p-map__item--wardrobe').on('click', function () {
   });
 });
 
+
+    
 const phoneMask = document.getElementById('phone-mask');
+
+
+
+
 
 !(function () {
   const form = document.getElementById('form');
@@ -391,6 +403,9 @@ const phoneMask = document.getElementById('phone-mask');
   const companyName = document.getElementById('company-name');
   const formActivity = document.getElementById('form-activity');
   const square = document.getElementById('square');
+
+
+
 
   // Показываем ошибку под полем
   function showError(input, message) {
@@ -506,3 +521,52 @@ function initBoxDown() {
 initBoxDown();
 window.addEventListener('load', initBoxDown);
 window.addEventListener('resize', initBoxDown);
+
+
+
+$('#username').on('input', function(){
+	this.value = this.value.replace(/[^а-яё\s\-]/gi, '');
+});
+$('#company-name').on('input', function(){
+	this.value = this.value.replace(/[^а-яё\s\-.]/gi, '');
+});
+
+window.addEventListener("DOMContentLoaded", function() {
+  [].forEach.call( document.querySelectorAll('#phone-mask'), function(input) {
+  var keyCode;
+  function mask(event) {
+      event.keyCode && (keyCode = event.keyCode);
+      var pos = this.selectionStart;
+      if (pos < 3) event.preventDefault();
+      var matrix = "+7 (___) ___ ____",
+          i = 0,
+          def = matrix.replace(/\D/g, ""),
+          val = this.value.replace(/\D/g, ""),
+          new_value = matrix.replace(/[_\d]/g, function(a) {
+              return i < val.length ? val.charAt(i++) || def.charAt(i) : a
+          });
+      i = new_value.indexOf("_");
+      if (i != -1) {
+          i < 5 && (i = 3);
+          new_value = new_value.slice(0, i)
+      }
+      var reg = matrix.substr(0, this.value.length).replace(/_+/g,
+          function(a) {
+              return "\\d{1," + a.length + "}"
+          }).replace(/[+()]/g, "\\$&");
+      reg = new RegExp("^" + reg + "$");
+      if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) this.value = new_value;
+      if (event.type == "blur" && this.value.length < 5)  this.value = ""
+  }
+
+  input.addEventListener("input", mask, false);
+  input.addEventListener("focus", mask, false);
+  input.addEventListener("blur", mask, false);
+  input.addEventListener("keydown", mask, false)
+
+});
+
+});
+
+
+
