@@ -47,7 +47,8 @@
     "air-datepicker": "^3.4.0",
     "d3": "^7.8.5",
     "dave": "^0.2.1",
-    "inputmask": "^5.0.8",
+    "imask": "^7.3.0",
+    "inputmask": "^5.0.9-beta.45",
     "jquery.maskedinput": "^1.4.1"
   }
 }

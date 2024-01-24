@@ -6,6 +6,7 @@ import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper/modules';
 import * as d3 from 'd3';
 import Inputmask from "inputmask";
 
+
 // init Swiper:
 
 export const rem = function (rem) {
@@ -21,6 +22,7 @@ function ajax(){
     url: '/ajax/main/main.php',
     type: 'post',
     data: "",
+    async: false,
     dataType: 'json',
     success: $.proxy(function (data) {
       window.speedOne = data.SPEED_ONE;
