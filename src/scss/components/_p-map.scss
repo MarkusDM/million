@@ -480,17 +480,16 @@
 
       &-mob {
         display: flex;
+        flex-direction: column;
       }
 
       &-mob-block {
-        margin-right: 7rem;
+        display: flex;
       }
 
       &-mob-block:last-child {
-        display: flex;
-        flex-direction: column;
-        gap: 3.2rem;
-        margin-right: 0;
+        align-items:center;
+        justify-content: space-between;
       }
 
       &-mob-title {
@@ -504,8 +503,8 @@
         padding-bottom: 3rem;
         width: fit-content;
         color: var(--Black, #1c1c1c);
-        font-size: 2.4rem;
-        font-weight: 800;
+        font-size: 3rem;
+        font-weight: 600;
         &::before {
           position: absolute;
           content: "";

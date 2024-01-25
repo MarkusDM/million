@@ -742,7 +742,7 @@
       display: block;
       left: -300rem;
       transition: left 0.5s;
-      padding-bottom: 100rem;
+      padding-bottom: 10rem;
       &-top-item {
         position: relative;
         width: 100%;
@@ -852,7 +852,7 @@
       height: fit-content;
       z-index: 101;
       display: block;
-      padding-bottom: 100rem;
+    
       left: -300rem;
       transition: left 0.5s;
       &-inner {

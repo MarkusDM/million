@@ -392,6 +392,7 @@
     &__one-s {
       &::after {
         height: 15%;
+        backdrop-filter: blur(1px);
       }
       &-content {
         width: 100%;
@@ -481,6 +482,7 @@
     &__slide-t {
       &::after {
         height: 20%;
+        backdrop-filter: blur(1px);
       }
       &-wrapper {
         height: 100%;

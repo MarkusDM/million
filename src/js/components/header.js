@@ -12,6 +12,7 @@ $( document ).ready(function() {
 		$(".header__mob").toggleClass("active");
 		$(".header__mob-catalog").removeClass("active");
     $("section").toggleClass("active-section");
+    $("footer").toggleClass("active-section");
 	});
 	$(".header__mob-top-item--catalog").click( function() {
 		$(".header__mob-catalog").addClass("active");
