@@ -514,7 +514,7 @@
       top: 120%;
       height: fit-content;
       z-index: 101;
-      display: block;
+      display: none;
       padding-bottom: 100rem;
       left: -300rem;
       transition: left 0.5s;
@@ -524,6 +524,7 @@
     &__mob-services-down.active {
       left: 0;
       transition: left 0.5s;
+      display: block;
     }
 
     &__mob-services-down-item {
@@ -851,7 +852,7 @@
       top: 120%;
       height: fit-content;
       z-index: 101;
-      display: block;
+      display: none;
     
       left: -300rem;
       transition: left 0.5s;
@@ -995,6 +996,7 @@
     &__mob-catalog.active {
       left: 0;
       transition: left 0.5s;
+      display: block;
     }
   }
 }
