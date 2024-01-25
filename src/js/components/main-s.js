@@ -576,3 +576,9 @@ window.addEventListener("DOMContentLoaded", function() {
 
 
 
+
+$(".p-map__searh-down-item").click(function() { // ID откуда кливаем
+  $('html, body').animate({
+  scrollTop: $(".p-map__content-block").offset().top // класс объекта к которому приезжаем
+  }, 1000); // Скорость прокрутки
+ });

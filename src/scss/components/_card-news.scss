@@ -17,6 +17,10 @@
   border-radius: 2rem;
 }
 
+.card-news__img-wrap--mob {
+  display: none;
+}
+
 .card-news__img {
   width: 100%;
   height: 100%;
@@ -90,6 +94,12 @@
 
   .card-news__img-wrap {
     height: 40rem;
+    display: none;
+  }
+
+
+  .card-news__img-wrap--mob {
+    display: flex;
   }
 
   .card-news__img,
