@@ -495,7 +495,7 @@ const phoneMask = document.getElementById('phone-mask');
         checkEmail(email);
         checkLength(formActivity, 5, 100);
         checkLength(square, 3, 15);
-        checkLength(phoneMask, 11, 11);
+        checkLength(phoneMask, 17, 17);
       }
     });
   }
@@ -582,3 +582,19 @@ $(".p-map__searh-down-item").click(function() { // ID откуда кливае�
   scrollTop: $(".p-map__content-block").offset().top // класс объекта к которому приезжаем
   }, 1000); // Скорость прокрутки
  });
+
+
+ $(document).on('touchstart', 'textarea, input[type=text], input[type=date], input[type=password], input[type=email], input[type=number]', function(e){
+
+  var intv = 100;
+  var $obj = $(this);
+
+  if (getMobileOperatingSystem() == 'ios') {
+
+      e.stopPropagation();
+
+      $obj.css({'transform': 'TranslateY(-10000px)'}).focus();
+      setTimeout(function(){$obj.css({'transform': 'none'});}, intv);
+  }
+  return true;
+});
