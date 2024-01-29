@@ -27,6 +27,26 @@ export const getHash = () => {
   }
 };
 
+// datepicker
+
+export const dp = new AirDatepicker('#dp', {
+  multipleDatesSeparator: '-',
+  isMobile: true,
+  autoClose: true,
+  navTitles: {
+    days: '<i>MMMM</i> <strong>yyyy</strong>',
+  },
+  range: true,
+  inline: window.innerWidth <= 768 ? true : false,
+  // onRenderCell({ date }) {
+  //     if (date.getMonth() > dp.viewDate.getMonth()) {
+  //       return {
+  //         classes: '_hidden',
+  //       };
+  //     }
+  // },
+});
+
 // --------------------------------------------------------------------------
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -48,22 +68,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // datepicker
-  const dp = new AirDatepicker('#dp', {
-    multipleDatesSeparator: '-',
-    navTitles: {
-      days: '<i>MMMM</i> <strong>yyyy</strong>',
-    },
-    range: true,
-    inline: window.innerWidth <= 768 ? true : false,
-    // onRenderCell({ date }) {
-    //     if (date.getMonth() > dp.viewDate.getMonth()) {
-    //       return {
-    //         classes: '_hidden',
-    //       };
-    //     }
-    // },
-  });
+  
+
 
   // sliders
   let chapterPageSlider = null;

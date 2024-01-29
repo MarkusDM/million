@@ -5,7 +5,7 @@ import 'swiper/css/effect-fade';
 import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper/modules';
 import * as d3 from 'd3';
 import Inputmask from "inputmask";
-
+import { dp } from '../components/main-a';
 
 // init Swiper:
 
@@ -584,17 +584,3 @@ $(".p-map__searh-down-item").click(function() { // ID откуда кливае�
  });
 
 
- $(document).on('touchstart', 'textarea, input[type=text], input[type=date], input[type=password], input[type=email], input[type=number]', function(e){
-
-  var intv = 100;
-  var $obj = $(this);
-
-  if (getMobileOperatingSystem() == 'ios') {
-
-      e.stopPropagation();
-
-      $obj.css({'transform': 'TranslateY(-10000px)'}).focus();
-      setTimeout(function(){$obj.css({'transform': 'none'});}, intv);
-  }
-  return true;
-});
