@@ -35,7 +35,9 @@
 
 .search-box {
   position: relative;
-  padding: 0 3.1rem 0 0;
+  a {
+    padding: 0 3.1rem 0 0;
+  }
   height: 7.8rem;
   &.input {
     &::after {
@@ -189,6 +191,7 @@
     flex-direction: column;
     height: 100%;
     overflow: auto;
+    width: 100%;
   }
 
   // .filters-box__close-btn

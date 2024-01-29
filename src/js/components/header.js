@@ -11,10 +11,13 @@ $( document ).ready(function() {
     $(".header__bottom-mob-burger").on('click', function() {
 		$(".header__mob").toggleClass("active");
 		$(".header__mob-catalog").removeClass("active");
-    $("section").toggleClass("active-section");
-    $("footer").toggleClass("active-section");
+    $("section").toggleClass("active-section-br");
+    $("footer").toggleClass("active-section-br");
     $('.header__bottom-form-down').hide();
+    $('.header__bottom-mob-search-input').val('');
 	});
+
+
 	$(".header__mob-top-item--catalog").click( function() {
 		$(".header__mob-catalog").addClass("active");
 	});
@@ -76,6 +79,8 @@ $( document ).ready(function() {
             $('.header__bottom-form-down').fadeIn() :
             $('.header__bottom-form-down').hide();
              $(".header__mob").removeClass("active");
+             $("section").toggleClass("active-section");
+             $("footer").toggleClass("active-section");
             $(".header__bottom-mob-burger").removeClass("open");
     });
 
