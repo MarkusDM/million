@@ -31,8 +31,6 @@ export const getHash = () => {
 
 export const dp = new AirDatepicker('#dp', {
   multipleDatesSeparator: '-',
-  isMobile: true,
-  autoClose: true,
   navTitles: {
     days: '<i>MMMM</i> <strong>yyyy</strong>',
   },
@@ -45,6 +43,11 @@ export const dp = new AirDatepicker('#dp', {
   //       };
   //     }
   // },
+});
+
+
+$(".all-news").on("click", ".all-news__reset", function(){
+  dp.clear();
 });
 
 // --------------------------------------------------------------------------
@@ -200,6 +203,7 @@ document.addEventListener('DOMContentLoaded', function () {
         dp.clear();
       }
     }
+    
     if (target.closest('.filters-btn')) {
       document.documentElement.classList.add('_filters-box-opened');
       document.body.classList.add('_lock');

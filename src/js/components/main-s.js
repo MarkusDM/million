@@ -9,32 +9,7 @@ import { dp } from '../components/main-a';
 
 // init Swiper:
 
-$('.catalog').on('click', '.catalog__reset', function () {
-  let data = {
-    TYPE: $("input[name='TYPE']").val(),
-    SORT: 'SORT:ASC',
-    FILTER: {
-      SECTION_CODE: $("input[name='SECTION_CODE']").val(),
-    },
-    PAG: $("input[name='PAG']").val(),
-    TAB: $('.catalog__wrapper.active').data('tab'),
-    ACTION: 'SORT',
-  };
-  $.ajax({
-    url: '/ajax/catalog/sortFilter.php',
-    type: 'post',
-    data: data,
-    dataType: 'json',
-    success: $.proxy(function (data) {
-      dp.clear();
-      $('.select').removeClass('_select-filled');
-      $('#catalog-result').html(data);
-    }, this),
-    error: $.proxy(function (error) {
-      console.log(error);
-    }, this),
-  });
-});
+
 
 export const rem = function (rem) {
   if ($(window).width() > 768) {
