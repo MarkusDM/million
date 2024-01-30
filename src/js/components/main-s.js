@@ -403,105 +403,105 @@ const phoneMask = document.getElementById('phone-mask');
 
 
 
-!(function () {
-  const form = document.getElementById('form');
-  const userName = document.getElementById('username');
-  const email = document.getElementById('email');
-  // const phone = document.getElementById("phone");
-  const companyName = document.getElementById('company-name');
-  const formActivity = document.getElementById('form-activity');
-  const square = document.getElementById('square');
+// !(function () {
+//   const form = document.getElementById('form');
+//   const userName = document.getElementById('username');
+//   const email = document.getElementById('email');
+//   // const phone = document.getElementById("phone");
+//   const companyName = document.getElementById('company-name');
+//   const formActivity = document.getElementById('form-activity');
+//   const square = document.getElementById('square');
 
 
 
 
-  // Показываем ошибку под полем
-  function showError(input, message) {
-    const formControl = input.parentElement;
-    formControl.className = 'form-control error';
-    const small = formControl.querySelector('small');
-    small.innerText = message;
-  }
+//   // Показываем ошибку под полем
+//   function showError(input, message) {
+//     const formControl = input.parentElement;
+//     formControl.className = 'form-control error';
+//     const small = formControl.querySelector('small');
+//     small.innerText = message;
+//   }
 
-  // Показываем, что поле заполнено верно
-  function showSuccess(input, textarea) {
-    const formControl = input.parentElement;
-    formControl.className = 'form-control success';
-  }
+//   // Показываем, что поле заполнено верно
+//   function showSuccess(input, textarea) {
+//     const formControl = input.parentElement;
+//     formControl.className = 'form-control success';
+//   }
 
-  // Проверяем адрес электронной почты на правильность
-  function checkEmail(input) {
-    const re =
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (re.test(input.value.trim())) {
-      showSuccess(input);
-    } else {
-      showError(input, 'Адрес электронной почты имеет неверный формат');
-    }
-  }
+//   // Проверяем адрес электронной почты на правильность
+//   function checkEmail(input) {
+//     const re =
+//       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+//     if (re.test(input.value.trim())) {
+//       showSuccess(input);
+//     } else {
+//       showError(input, 'Адрес электронной почты имеет неверный формат');
+//     }
+//   }
 
-  // Проверка обязательных полей
-  /**
-   *
-   * @param {HTMLElement[]} inputElements
-   * @returns {boolean}
-   */
-  function checkRequired(inputElements) {
-    let isRequired = false;
-    inputElements.forEach(function (input) {
-      if (input.value.trim() === '') {
-        showError(
-          input,
-          `Требуется задать значение для поля ${getFieldName(input)}`
-        );
-        isRequired = true;
-      } else {
-        showSuccess(input);
-      }
-    });
+//   // Проверка обязательных полей
+//   /**
+//    *
+//    * @param {HTMLElement[]} inputElements
+//    * @returns {boolean}
+//    */
+//   function checkRequired(inputElements) {
+//     let isRequired = false;
+//     inputElements.forEach(function (input) {
+//       if (input.value.trim() === '') {
+//         showError(
+//           input,
+//           `Требуется задать значение для поля ${getFieldName(input)}`
+//         );
+//         isRequired = true;
+//       } else {
+//         showSuccess(input);
+//       }
+//     });
 
-    return isRequired;
-  }
+//     return isRequired;
+//   }
 
-  // Проверяем значение поля на соответствие минимальной и максимальной длине
-  function checkLength(input, min, max) {
-    if (input.value.length < min) {
-      showError(input, `Поле  должно быть длиной не менее ${min} символов`);
-    } else if (input.value.length > max) {
-      showError(input, `Поле  не должно быть длиной более ${max} символов`);
-    } else {
-      showSuccess(input);
-    }
-  }
+//   // Проверяем значение поля на соответствие минимальной и максимальной длине
+//   function checkLength(input, min, max) {
+//     if (input.value.length < min) {
+//       showError(input, `Поле  должно быть длиной не менее ${min} символов`);
+//     } else if (input.value.length > max) {
+//       showError(input, `Поле  не должно быть длиной более ${max} символов`);
+//     } else {
+//       showSuccess(input);
+//     }
+//   }
 
-  // // Проверка соответствия паролей
-  // function checkPasswordsMatch(input1, input2) {
-  //   if (input1.value !== input2.value) {
-  //     showError(input2, "Пароли не совпадают");
-  //   }
-  // }
+//   // // Проверка соответствия паролей
+//   // function checkPasswordsMatch(input1, input2) {
+//   //   if (input1.value !== input2.value) {
+//   //     showError(input2, "Пароли не совпадают");
+//   //   }
+//   // }
 
-  // Получаем имя поля
-  function getFieldName(input) {
-    return input.id.charAt(0).toUpperCase() + input.id.slice(1);
-  }
+//   // Получаем имя поля
+//   function getFieldName(input) {
+//     return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+//   }
 
-  // Устанавливаем слушатели событий на форму
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
+//   // Устанавливаем слушатели событий на форму
+//   if (form) {
+//     form.addEventListener('submit', function (e) {
+//       e.preventDefault();
 
-      if (checkRequired([userName, email, companyName, square, phoneMask])) {
-        checkLength(userName, 3, 15);
-        checkLength(companyName, 3, 15);
-        checkEmail(email);
-        checkLength(formActivity, 5, 100);
-        checkLength(square, 3, 15);
-        checkLength(phoneMask, 17, 17);
-      }
-    });
-  }
-})();
+//       if (checkRequired([userName, email, companyName, square, phoneMask])) {
+//         checkLength(userName, 3, 15);
+//         checkLength(companyName, 3, 15);
+//         checkEmail(email);
+//         checkLength(formActivity, 5, 100);
+//         checkLength(square, 3, 15);
+//         checkLength(phoneMask, 17, 17);
+//       }
+//     });
+//   }
+// })();
 
 var initBox = false;
 
