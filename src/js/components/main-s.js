@@ -270,6 +270,10 @@ $(document).ready(() => {
     }
   );
 
+
+ 
+  
+
   const svgContainers = document.querySelectorAll('.content-svg');
   if (svgContainers.length > 0) {
     const btnZoomIn = document.querySelector('.p-map__zoom-plus');

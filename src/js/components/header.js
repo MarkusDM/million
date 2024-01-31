@@ -45,7 +45,9 @@ $( document ).ready(function() {
 		$(this).toggleClass('active');
 	});
 
-	
+  $('.modal-thanks__close').click(function() {
+    $('.modal-thanks').removeClass('active');
+  });
 
 	$('.header').each(function () {
         let more = $(this).find('.header__bottom-catalog');
