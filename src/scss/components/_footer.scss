@@ -85,12 +85,51 @@
       height: 4.6rem;
     }
   }
+
+  &__socials {
+    display: flex;
+    align-items:center;
+    margin-top: 3rem;
+    a {
+      width: 4rem;
+      height: 4rem;
+      margin-right: 2rem;
+      &:hover {
+        svg {
+
+          .path-white {
+            fill: white;
+            transition: 0.2s ease-in-out;
+          }
+          path {
+            fill: #ED1E79;
+            transition: 0.2s ease-in-out;
+          }
+        }
+      }
+    }
+
+    a:last-child {
+      margin-right: 0;
+    }
+  }
 }
 
 @media (max-width: 48em) {
   .footer {
     .container {
       padding: 0;
+    }
+
+    &__socials {
+      margin-top: 5rem;
+      a {
+        width: 6rem;
+        height: 6rem;
+        margin-right: 3rem;
+      
+      }
+  
     }
 
     &__title {
